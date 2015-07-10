@@ -1,0 +1,18 @@
+{{#paper-toolbar}}
+    <div class="md-toolbar-tools">
+        {{#paper-sidenav-toggle class="menu-sidenav-toggle"}}
+            {{paper-icon icon="menu"}}
+        {{/paper-sidenav-toggle}}
+
+        {{#paper-button action="gotoAircraftTypes"}}Aircraft{{/paper-button}}
+        {{#paper-button action="gotoPilotClasses"}}Pilot Classes{{/paper-button}}
+    </div>
+{{/paper-toolbar}}
+
+{{#paper-content classNames="md-padding"}}
+    <div class="doc-content">
+
+        {{outlet}}
+
+    </div>
+{{/paper-content}}

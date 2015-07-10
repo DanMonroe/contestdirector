@@ -1,3 +1,24 @@
-<h2 id="title">Welcome to Ember.js</h2>
+{{#paper-nav-container classNames="ember-app"}}
 
-{{outlet}}
+    {{#paper-sidenav classNames="md-sidenav-left md-whiteframe-z2" flex-layout="column" flex=true}}
+
+        {{#paper-toolbar}}
+            <div class="md-toolbar-tools">
+                <strong>Contest Director</strong>
+            </div>
+        {{/paper-toolbar}}
+
+        {{#paper-content}}
+            {{#paper-list}}
+                {{#paper-item action="transitionTo" param="admin.aircrafttypes"}}Admin{{/paper-item}}
+                {{#paper-item action="transitionTo" param="contests"}}Contests{{/paper-item}}
+            {{/paper-list}}
+
+        {{/paper-content}}
+    {{/paper-sidenav}}
+
+    {{#paper-content flex-layout="column" flex=true}}
+        {{outlet}}
+    {{/paper-content}}
+
+{{/paper-nav-container}}
