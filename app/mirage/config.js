@@ -29,6 +29,7 @@ export default function() {
 
   this.get('/api/contests');
   this.get('/api/contests/:id');
+  this.get('/api/contests/:urlpath');
 
   this.get('/api/aircrafttypes');
   this.get('/api/aircrafttypes/:id');

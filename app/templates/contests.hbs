@@ -17,14 +17,12 @@
                 {{#each model as |contest|}}
                     {{#paper-item class="md-3-line"}}
                         <div class="md-list-item-text">
-                            <h3>{{#link-to 'contests.rounds' contest}}{{contest.name}}{{/link-to}}</h3>
+                            <h3>{{#link-to 'contest' contest}}{{contest.name}}{{/link-to}}</h3>
                             <p>Aircraft Type: {{contest.aircraftType.name}}</p>
                         </div>
                     {{/paper-item}}
                 {{/each}}
             {{/paper-list}}
-
-            {{outlet}}
 
         {{/paper-content}}
 
