@@ -15,6 +15,16 @@
             <h3>{{currentcontest.name}}</h3>
             <p>Aircraft Type: {{currentcontest.aircraftType.name}}</p>
 
+
+            {{#each currentcontest.pilotClass as |pilotClass|}}
+                {{#paper-card}}
+                    {{#paper-card-content}}
+                        <h2>{{pilotClass.name}}</h2>
+                    {{/paper-card-content}}
+                {{/paper-card}}
+
+
+            {{/each}}
         {{/each}}
 
 
