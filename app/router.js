@@ -7,9 +7,9 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('admin', function() {
-    this.route('aircrafttypes');
-
     //this.route('pilotclasses');
+    this.route('aircrafttypes');
+    this.route('pilotclasses');
   });
   this.route('contests', function() {
     this.route('rounds',{ path: '/:contest_id/rounds' });

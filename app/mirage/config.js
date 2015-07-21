@@ -33,6 +33,9 @@ export default function() {
 
   this.get('/api/aircrafttypes');
   this.get('/api/aircrafttypes/:id');
+
+  this.get('/api/pilotclasses');
+  this.get('/api/pilotclasses/:id');
   /*
     POST shorthands
 
