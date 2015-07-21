@@ -4,6 +4,6 @@ export default [
     name: 'Test Contest',
     aircraftTypeId: 2,
     urlpath: 'testcontest',
-    pilotClass: [1,2,3]
+    pilotClasses: [3,2,1]
   }
 ];

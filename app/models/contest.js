@@ -4,7 +4,7 @@ import DS from 'ember-data';
 export default DS.Model.extend({
   name: DS.attr('string'),
   aircraftTypeId: DS.attr('number'),
-  pilotClass: DS.hasMany('pilotclass',{async: true}),
+  pilotClasses: DS.hasMany('pilotclass',{async: true}),
   urlpath: DS.attr('string'),
 
   aircraftType: Ember.computed('aircraftTypeId', function() {
