@@ -10,15 +10,10 @@
 {{#paper-content classNames="md-padding"}}
     <div class="doc-content">
 
+        <h3>{{model.name}}</h3>
+        <p>Aircraft Type: {{model.aircraftType.name}}</p>
 
-        {{#each model as |currentcontest|}}
-            <h3>{{currentcontest.name}}</h3>
-            <p>Aircraft Type: {{currentcontest.aircraftType.name}}</p>
-
-            {{pilot-class-list pilotClasses=currentcontest.pilotClasses}}
-
-        {{/each}}
-
+        {{pilot-class-list pilotClasses=model.pilotClasses}}
 
     </div>
 

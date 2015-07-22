@@ -16,7 +16,8 @@ Router.map(function() {
 
     this.route('new');
   });
-  this.route('contest', { path: 'contests/:urlpath' });
+  this.route('contest', { path: '/contests/:contest_id' });
+  //this.route('contest', { path: 'contests/:urlpath' });
 });
 
 export default Router;

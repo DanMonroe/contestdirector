@@ -29,7 +29,8 @@ export default function() {
 
   this.get('/api/contests');
   this.get('/api/contests/:id');
-  this.get('/api/contests/:urlpath');
+  //this.get('/api/contests/:urlpath');
+  //this.get('/api/contest/:id');
 
   this.get('/api/aircrafttypes');
   this.get('/api/aircrafttypes/:id');
@@ -42,6 +43,7 @@ export default function() {
     this.post('/contacts');
     this.post('/contacts', 'user'); // specify the type of resource to be created
   */
+  this.post('/api/contests', 'contest'); // specify the type of resource to be created
 
   /*
     PUT shorthands

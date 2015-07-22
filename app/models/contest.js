@@ -9,6 +9,9 @@ export default DS.Model.extend({
 
   aircraftType: Ember.computed('aircraftTypeId', function() {
     var aircraftTypeId = this.get('aircraftTypeId');
+    if( ! aircraftTypeId ) {
+      return "";
+    }
     return this.store.find("aircrafttype", aircraftTypeId);
   })
 });
