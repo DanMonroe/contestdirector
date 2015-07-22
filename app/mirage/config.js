@@ -51,6 +51,7 @@ export default function() {
     this.put('/contacts/:id');
     this.put('/contacts/:id', 'user'); // specify the type of resource to be updated
   */
+  this.put('/api/contests/:id', 'contest'); // specify the type of resource to be created
 
   /*
     DELETE shorthands

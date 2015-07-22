@@ -10,7 +10,7 @@
 {{#paper-content classNames="md-padding"}}
     <div class="doc-content">
 
-        <h3>{{model.name}}</h3>
+        <h3>{{model.name}}</h3>{{#paper-button icon-button=true action="transitionTo" param="contests.edit"}}{{paper-icon icon="edit"}}{{/paper-button}}
         <p>Aircraft Type: {{model.aircraftType.name}}</p>
 
         {{pilot-class-list pilotClasses=model.pilotClasses}}

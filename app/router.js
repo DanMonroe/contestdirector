@@ -7,17 +7,20 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('admin', function() {
-    //this.route('pilotclasses');
+
     this.route('aircrafttypes');
     this.route('pilotclasses');
   });
   this.route('contests', function() {
     this.route('rounds',{ path: '/:contest_id/rounds' });
 
+    this.route('show', { path: ':contest_id' });
     this.route('new');
+    this.route('edit', { path: ':contest_id/edit' });
+
   });
-  this.route('contest', { path: '/contests/:contest_id' });
-  //this.route('contest', { path: 'contests/:urlpath' });
+  //this.route('contest', { path: '/contests/:contest_id' });
+
 });
 
 export default Router;
