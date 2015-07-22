@@ -1,4 +1,4 @@
 <h3>{{model.name}}</h3>
 <p>Aircraft Type: {{model.aircraftType.name}}</p>
-{{#paper-button icon-button=true action="transitionTo" param="contests.edit"}}{{paper-icon icon="edit"}}{{/paper-button}}
+{{#paper-button icon-button=true action="editContest"}}{{paper-icon icon="edit"}}{{/paper-button}}
 {{pilot-class-list pilotClasses=model.pilotClasses}}

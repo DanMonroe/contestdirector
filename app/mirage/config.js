@@ -62,6 +62,7 @@ export default function() {
     // Single object + related resources. Make sure parent resource is first.
     this.del('/contacts/:id', ['contact', 'addresses']);
   */
+  this.del('/api/contests/:id', 'contest'); // specify the type of resource to be deleted
 
   /*
     Function fallback. Manipulate data in the db via
