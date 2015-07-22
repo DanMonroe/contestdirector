@@ -5,11 +5,6 @@ export default Ember.Controller.extend({
         editContest() {
             this.transitionToRoute('contests.edit', this.get('model'));
             return false;
-        },
-        deleteContest(contest) {
-            contest.destroyRecord().then(() => {
-                this.transitionTo('contests.index');
-            });
         }
     }
 });

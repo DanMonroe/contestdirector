@@ -1,14 +1,11 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  model: function() {
-    return this.store.findAll('contest');
-  },
-
   actions: {
     deleteContest(contest) {
-      contest.destroyRecord();
-      return false;
+      contest.destroyRecord().then(() => {
+        this.transitionTo('contests.index');
+      });
     },
     editContest(contest) {
       this.transitionTo('contests.edit', contest);
