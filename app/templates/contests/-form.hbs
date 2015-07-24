@@ -3,6 +3,13 @@
     <p>
         {{paper-input label="Name" value=model.name required=true required-errortext="Contest name is required."}}
     </p>
+    {{view "select"
+    prompt="Select an aircraft type"
+    content=aircraftTypes
+    optionValuePath="content.id"
+    optionLabelPath="content.name"
+    value=model.aircraftTypeId
+    }}
     <p>
         {{#paper-button raised=true action="save"}}Save{{/paper-button}}
         {{#paper-button raised=true action="cancel"}}Cancel{{/paper-button}}

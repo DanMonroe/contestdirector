@@ -1,12 +1,17 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-    isValid: Ember.computed('model.name', 'model.urlpath', {
+    isValid: Ember.computed('model.name', 'model.aircraftTypeId', {
             get() {
-                return !Ember.isEmpty(this.get('model.name'));
+                return !Ember.isEmpty(this.get('model.name')) && !Ember.isEmpty(this.get('model.aircraftTypeId'));
             }
         }
     ),
+
+    aircraftTypes: [
+        {name:"Airplane", id: 1},
+        {name:"Helicopter", id: 2}
+    ],
 
     actions: {
         save() {
