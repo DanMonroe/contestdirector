@@ -11,16 +11,21 @@ Router.map(function() {
     this.route('aircrafttypes');
     this.route('pilotclasses');
   });
+  //this.route('contest', { path: '/contests/:contest_id' });
   this.route('contests', function() {
-    this.route('rounds',{ path: '/:contest_id/rounds' });
+    this.route('rounds',{ path: '/:contest_id/rounds' });  // TODO where did this come from?
 
     this.route('show', { path: ':contest_id' });
     this.route('new');
     this.route('edit', { path: ':contest_id/edit' });
 
   });
-  //this.route('contest', { path: '/contests/:contest_id' });
 
+  this.route('users', function() {
+    this.route('show', { path: ':user_id' });
+    this.route('edit', { path: ':user_id/edit' });
+    this.route('new');
+  });
 });
 
 export default Router;

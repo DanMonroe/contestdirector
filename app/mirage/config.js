@@ -37,6 +37,9 @@ export default function() {
 
   this.get('/api/pilotclasses');
   this.get('/api/pilotclasses/:id');
+
+  this.get('/api/users');
+  this.get('/api/users/:id');
   /*
     POST shorthands
 
@@ -44,6 +47,7 @@ export default function() {
     this.post('/contacts', 'user'); // specify the type of resource to be created
   */
   this.post('/api/contests', 'contest'); // specify the type of resource to be created
+  this.post('/api/users', 'user'); // specify the type of resource to be created
 
   /*
     PUT shorthands
@@ -52,6 +56,7 @@ export default function() {
     this.put('/contacts/:id', 'user'); // specify the type of resource to be updated
   */
   this.put('/api/contests/:id', 'contest'); // specify the type of resource to be created
+  this.put('/api/users/:id', 'user'); // specify the type of resource to be created
 
   /*
     DELETE shorthands
@@ -63,6 +68,7 @@ export default function() {
     this.del('/contacts/:id', ['contact', 'addresses']);
   */
   this.del('/api/contests/:id', 'contest'); // specify the type of resource to be deleted
+  this.del('/api/users/:id', 'user'); // specify the type of resource to be deleted
 
   /*
     Function fallback. Manipulate data in the db via
