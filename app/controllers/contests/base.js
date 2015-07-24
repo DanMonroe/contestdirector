@@ -26,8 +26,7 @@ export default Ember.Controller.extend({
     ],
 
     actions: {
-        saveTheContestAlready() {
-debugger;
+        saveContest() {
             if (this.get('isValid')) {
                 this.get('model').save().then((contest) => {
                     this.transitionToRoute('contests.show', contest);
@@ -38,7 +37,7 @@ debugger;
 
             return false;
         },
-        cancel() {
+        cancelContest() {
             return true;  //  bubble up
         }
     }
