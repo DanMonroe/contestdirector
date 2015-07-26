@@ -4,7 +4,8 @@
 
         {{#paper-toolbar}}
             <div class="md-toolbar-tools">
-                <strong>Contest Director</strong>
+                {{#paper-item action="transitionTo" param="index"}}<strong>Contest Director</strong>{{/paper-item}}
+
             </div>
         {{/paper-toolbar}}
 
@@ -13,6 +14,7 @@
                 {{#paper-item action="transitionTo" param="admin.aircrafttypes"}}Admin{{/paper-item}}
                 {{#paper-item action="transitionTo" param="contests"}}Contests{{/paper-item}}
                 {{#paper-item action="transitionTo" param="users"}}Users{{/paper-item}}
+                {{#paper-item action="toScoreGrid"}}Score Grid{{/paper-item}}
             {{/paper-list}}
 
         {{/paper-content}}

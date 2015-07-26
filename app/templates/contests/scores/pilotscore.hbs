@@ -1,0 +1,28 @@
+<div class="well">
+    <table class="pilotscore">
+        <tr>
+            <th></th>
+            <th>Judge 1</th>
+            <th>Judge 2</th>
+            <th>Judge 3</th>
+            <th>Judge 4</th>
+            <th>Judge 5</th>
+            <th>Total</th>
+        </tr>
+        {{#each model.maneuvers as |maneuver|}}
+            <tr>
+                <td>
+                    {{maneuver.name}}
+                </td>
+                {{#each maneuver.scores as |thisScore|}}
+                    <td class="score">
+                        {{paper-input value=thisScore.points inputTabIndex=thisScore._tabIndex classBinding="thisScore._droppedLow:droppedLow thisScore._droppedHigh:droppedHigh"}}
+                    </td>
+                {{/each}}
+                <td class="score">
+                    {{paper-input value=maneuver.calculatedTotal disabled=true}}
+                </td>
+            </tr>
+        {{/each}}
+    </table>
+</div>

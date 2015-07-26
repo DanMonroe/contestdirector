@@ -24,13 +24,37 @@
  td.iconBar {
    padding: 0;
  }
- tr:nth-child(odd) td {
-   background-color: #E3ECF5;
- }
- tr:nth-child(even) td {
-   background-color: #D1DEEC;
- }
+ //tr:nth-child(odd) td {
+ //  background-color: #E3ECF5;
+ //}
+ //tr:nth-child(even) td {
+ //  background-color: #D1DEEC;
+ //}
  th {
    background-color: #4C9EF0;
    color: white;
+ }
+
+ .droppedLow input.md-input {
+    color: red;
+    text-decoration: underline;
+ }
+ .droppedHigh input.md-input {
+   color: orange;
+   text-decoration: underline;
+ }
+
+ .pilotscore {
+   & td {
+     &.score input {
+        text-align: center;
+        width: 75px;
+     }
+   }
+   & th {
+     text-align: center;
+     &.score {
+       width: 75px;
+     }
+   }
  }

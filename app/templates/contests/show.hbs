@@ -2,4 +2,4 @@
 <p>Aircraft Type: {{model.aircraftType.name}}</p>
 {{#paper-button icon-button=true action="editContest"}}{{paper-icon icon="edit"}}{{/paper-button}}
 {{#paper-button icon-button=true action="deleteContest" param=model}}{{paper-icon icon="delete"}}{{/paper-button}}
-{{pilot-class-list pilotClasses=model.pilotClasses}}
+{{pilot-class-list contest=model}}
