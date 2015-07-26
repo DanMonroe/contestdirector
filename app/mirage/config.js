@@ -40,14 +40,18 @@ export default function() {
 
   this.get('/api/users');
   this.get('/api/users/:id');
+
+  this.get('/api/maneuvers');
+  this.get('/api/maneuvers/:id');
   /*
     POST shorthands
 
     this.post('/contacts');
     this.post('/contacts', 'user'); // specify the type of resource to be created
   */
-  this.post('/api/contests', 'contest'); // specify the type of resource to be created
-  this.post('/api/users', 'user'); // specify the type of resource to be created
+  this.post('/api/contests', 'contest');
+  this.post('/api/users', 'user');
+  this.post('/api/maneuvers', 'maneuver');
 
   /*
     PUT shorthands
@@ -55,8 +59,9 @@ export default function() {
     this.put('/contacts/:id');
     this.put('/contacts/:id', 'user'); // specify the type of resource to be updated
   */
-  this.put('/api/contests/:id', 'contest'); // specify the type of resource to be created
-  this.put('/api/users/:id', 'user'); // specify the type of resource to be created
+  this.put('/api/contests/:id', 'contest');
+  this.put('/api/users/:id', 'user');
+  this.put('/api/maneuvers/:id', 'maneuver');
 
   /*
     DELETE shorthands
@@ -67,8 +72,9 @@ export default function() {
     // Single object + related resources. Make sure parent resource is first.
     this.del('/contacts/:id', ['contact', 'addresses']);
   */
-  this.del('/api/contests/:id', 'contest'); // specify the type of resource to be deleted
-  this.del('/api/users/:id', 'user'); // specify the type of resource to be deleted
+  this.del('/api/contests/:id', 'contest');
+  this.del('/api/users/:id', 'user');
+  this.del('/api/maneuvers/:id', 'maneuver');
 
   /*
     Function fallback. Manipulate data in the db via

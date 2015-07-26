@@ -1,7 +1,9 @@
 {{#paper-content classNames="md-whiteframe-z1"}}
     {{#paper-item}}
-        <h2>Editing {{model.name}}</h2>
+        <h2>Add a New Maneuver</h2>
     {{/paper-item}}
     {{paper-divider}}
-    {{partial "contests/form"}}
+    {{#paper-item}}
+        {{partial "admin/maneuvers/form"}}
+    {{/paper-item}}
 {{/paper-content}}

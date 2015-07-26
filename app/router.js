@@ -7,9 +7,13 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('admin', function() {
-
     this.route('aircrafttypes');
     this.route('pilotclasses');
+    this.route('maneuvers', function() {
+      this.route('show', { path: ':maneuver_id' });
+      this.route('edit');
+      this.route('new');
+    });
   });
   //this.route('contest', { path: '/contests/:contest_id' });
   this.route('contests', function() {
