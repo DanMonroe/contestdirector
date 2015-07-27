@@ -11,7 +11,7 @@ Router.map(function() {
     this.route('pilotclasses');
     this.route('maneuvers', function() {
       this.route('show', { path: ':maneuver_id' });
-      this.route('edit');
+      this.route('edit', { path: ':maneuver_id/edit' });
       this.route('new');
     });
   });
@@ -21,8 +21,8 @@ Router.map(function() {
     this.route('rounds',{ path: '/:contest_id/rounds' });
 
     this.route('show', { path: ':contest_id' });
-    this.route('new');
     this.route('edit', { path: ':contest_id/edit' });
+    this.route('new');
 
     this.route('scores', function() {
       this.route('pilotscore', { path: ':pilotscore_id' });
