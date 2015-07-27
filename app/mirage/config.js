@@ -52,6 +52,7 @@ export default function() {
   this.post('/api/contests', 'contest');
   this.post('/api/users', 'user');
   this.post('/api/maneuvers', 'maneuver');
+  this.post('/api/admin/maneuvers', 'maneuver');
 
   /*
     PUT shorthands

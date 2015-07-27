@@ -1,6 +1,6 @@
-import Ember from 'ember';
+import ManeuversBaseController from './base';
 
-export default Ember.Controller.extend({
+export default ManeuversBaseController.extend({
     actions: {
         editManeuver() {
             this.transitionToRoute('admin.maneuvers.edit', this.get('model'));
