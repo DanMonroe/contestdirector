@@ -1,9 +1,28 @@
 {{#paper-content classNames="md-whiteframe-z1"}}
-    {{#paper-item}}
+    <p>
         <h2>Add a New Maneuver</h2>
-    {{/paper-item}}
+    </p>
     {{paper-divider}}
-    {{#paper-item}}
-        {{partial "admin/maneuvers/form"}}
-    {{/paper-item}}
+    <p>
+        <form>
+            <h4>{{errorMessage}}</h4>
+            <p>
+                {{paper-input label="Name" value=model.name required=true required-errortext="Maneuver name is required."}}
+            </p>
+            <p>
+                {{select-2
+                content=model.pilotClasses
+                value=selectedItem
+                placeholder="Select a pilot class"
+                allowClear=true
+                optionValuePath="id"
+                optionLabelPath="name"
+                }}
+            </p>
+            <p>
+                {{#paper-button raised=true action="saveManeuver"}}Save{{/paper-button}}
+                {{#paper-button raised=true action="cancelManeuver"}}Cancel{{/paper-button}}
+            </p>
+        </form>
+    </p>
 {{/paper-content}}

@@ -4,12 +4,13 @@
         {{paper-input label="Name" value=model.name required=true required-errortext="Maneuver name is required."}}
     </p>
     <p>
-        {{view "select"
-        prompt="Select a pilot class"
+        {{select-2
         content=model.pilotClasses
-        optionValuePath="content.id"
-        optionLabelPath="content.name"
         value=selectedItem
+        placeholder="Select a pilot class"
+        allowClear=true
+        optionValuePath="id"
+        optionLabelPath="name"
         }}
 
     </p>

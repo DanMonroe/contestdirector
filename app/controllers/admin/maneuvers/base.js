@@ -30,6 +30,7 @@ export default Ember.Controller.extend({
 
         saveManeuver() {
             if (this.get('isValid')) {
+debugger;
                 this.get('model').save().then((maneuver) => {
                     this.transitionToRoute('admin.maneuvers.show', maneuver);
                 });

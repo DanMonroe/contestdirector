@@ -3,13 +3,16 @@
     <h3 style="display: inline">Maneuvers</h3>
     {{#paper-button icon-button=true action="transitionTo" param="admin.maneuvers.new"}}{{paper-icon icon="add"}}{{/paper-button}}
 </div>
-{{view "select"
-prompt="Select a pilot class"
-content=model.pilotClasses
-optionValuePath="content.id"
-optionLabelPath="content.name"
-value=selectedItem
-}}
+<p>
+    {{select-2
+        content=model.pilotClasses
+        value=selectedItem
+        placeholder="Select a pilot class"
+        allowClear=true
+        optionValuePath="id"
+        optionLabelPath="name"
+    }}
+</p>
 
 <table>
     <thead>
