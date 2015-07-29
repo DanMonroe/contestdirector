@@ -19,9 +19,15 @@ export default Ember.Controller.extend({
     ),
     actions: {
         deleteManeuver(maneuver) {
-            maneuver.destroyRecord().then(() => {
-                this.transitionToRoute('admin.maneuvers.show');
-            });
+            maneuver.destroyRecord().then(
+                () => {
+                    // success
+                    this.transitionToRoute('admin.maneuvers.index');
+                },
+                () => {
+                    // fail
+                }
+            );
         },
         editManeuver(maneuver) {
             this.transitionToRoute('admin.maneuvers.edit', maneuver);
@@ -29,14 +35,23 @@ export default Ember.Controller.extend({
         },
 
         saveManeuver() {
-            if (this.get('isValid')) {
-debugger;
-                this.get('model').save().then((maneuver) => {
-                    this.transitionToRoute('admin.maneuvers.show', maneuver);
-                });
-            } else {
-                this.set('errorMessage', 'You have to fill all the fields');
-            }
+            //if (this.get('isValid')) {
+//debugger;
+                this.get('model').save().then(
+                    function(maneuver) {
+                        console.log('save succeeded');
+                        //debugger;
+                        this.transitionToRoute('admin.maneuvers.index', maneuver);
+                    },
+                    function() {
+                        console.log('save failed');
+                        //debugger;
+                        // fail
+                    }
+                );
+            //} else {
+            //    this.set('errorMessage', 'You have to fill all the fields');
+            //}
 
             return false;
         },
