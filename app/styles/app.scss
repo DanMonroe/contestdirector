@@ -1,4 +1,6 @@
- @import 'ember-paper';
+$primary: 'blue';
+
+@import 'ember-paper';
 
  table {
    margin-bottom: 8px;
@@ -31,8 +33,8 @@
  //  background-color: #D1DEEC;
  //}
  th {
-   background-color: #4C9EF0;
-   color: white;
+   background-color: color($primary, '300');
+   color: color($primary, 'contrast');
  }
 
  .droppedLow input.md-input {

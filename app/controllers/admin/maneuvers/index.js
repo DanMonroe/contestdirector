@@ -1,4 +1,4 @@
-import Ember from 'ember';
+//import Ember from 'ember';
 import ManeuversBaseController from './base';
 
 export default ManeuversBaseController.extend({
