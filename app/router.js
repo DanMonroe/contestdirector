@@ -27,6 +27,9 @@ Router.map(function() {
     this.route('scores', function() {
       this.route('pilotscore', { path: ':pilotscore_id' });
     });
+    this.route('registration', { path: ':contest_id/registration/pilotclass/:pilotclass_id' }, function() {
+      //this.route('pilotclass', { path: '/pilotclass/:pilotclass_id' });
+    });
   });
 
   this.route('users', function() {

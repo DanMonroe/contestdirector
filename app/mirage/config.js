@@ -43,6 +43,12 @@ export default function() {
 
   this.get('/api/maneuvers');
   this.get('/api/maneuvers/:id');
+
+  this.get('/api/registrations');
+
+  //this.get('/api/registration/:contest_id/registration/pilotclass/:pilotclass_id')
+
+  //this.get('/api/registrations', ['registration', 'pilotclasses', 'users']);
   /*
     POST shorthands
 

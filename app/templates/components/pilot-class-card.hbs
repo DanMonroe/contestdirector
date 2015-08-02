@@ -2,6 +2,7 @@
     {{#paper-card-content}}
         <h4>{{pilotClass.name}}</h4>
         <p>
+            {{#link-to 'contests.registration' contest.id pilotClass.id}}Registration{{/link-to}}
             {{#link-to 'contests.scores.pilotscore' pilotClass}}Scores{{/link-to}}
         </p>
     {{/paper-card-content}}
