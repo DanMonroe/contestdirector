@@ -15,11 +15,9 @@ Router.map(function() {
       this.route('new');
     });
   });
-  //this.route('contest', { path: '/contests/:contest_id' });
-  this.route('contests', function() {
-    // TODO where did this come from?
-    this.route('rounds',{ path: '/:contest_id/rounds' });
 
+  this.route('contests', function() {
+  
     this.route('show', { path: ':contest_id' });
     this.route('edit', { path: ':contest_id/edit' });
     this.route('new');
