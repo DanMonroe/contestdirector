@@ -4,6 +4,7 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'contestdirector',
     environment: environment,
+    firebase: 'https://contestdirector.firebaseio.com/',
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {
@@ -22,11 +23,11 @@ module.exports = function(environment) {
       'default-src': "'none'",
       'script-src': "'self'",
       'font-src': "'self' https://fonts.gstatic.com",
-      'connect-src': "'self'",
-      'img-src': "'self'",
+      'connect-src': "'self' wss://*.firebaseio.com",
+      'img-src': "'self' data:",
       'report-uri':"'localhost'",
-      'style-src': "'self'",
-      'frame-src': "'none'"
+      'style-src': "'self' wss://*.firebaseio.com 'unsafe-inline'",
+      'frame-src': "'none' wss://*.firebaseio.com"
     }
   };
 

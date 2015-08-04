@@ -17,6 +17,7 @@
     "lodash": "~3.7.0",
     "Faker": "~2.1.3",
     "hammerjs": "~2.0.4",
-    "select2": "3.5.2"
+    "select2": "3.5.2",
+    "firebase": "^2.1.0"
   }
 }

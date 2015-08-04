@@ -2,7 +2,7 @@
 import ManeuversBaseController from './base';
 
 export default ManeuversBaseController.extend({
-    sortProperties: ['name']
+    //sortProperties: ['name']
     //filteredManeuvers: Ember.computed('selectedItem', function() {
     //    var selectedClass = this.get('selectedItem');
     //

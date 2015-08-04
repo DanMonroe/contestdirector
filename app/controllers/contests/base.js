@@ -30,6 +30,7 @@ export default Ember.Controller.extend({
     actions: {
         saveContest() {
             if (this.get('isValid')) {
+
                 this.get('model').save().then((contest) => {
                     this.transitionToRoute('contests.show', contest);
                 });

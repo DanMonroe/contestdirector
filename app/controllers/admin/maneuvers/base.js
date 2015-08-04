@@ -6,14 +6,15 @@ export default Ember.Controller.extend({
 
         return this.get('model.maneuvers').filter(
             function (maneuver) {
-                return maneuver.get('pilotClass.id') === selectedClass;
+                return maneuver.get('pilotClassId') === selectedClass;
             }
         );
     }),
 
     isValid: Ember.computed('model.name', {
             get() {
-                return !Ember.isEmpty(this.get('model.name'));
+                debugger;
+                return !Ember.isEmpty(this.get('model.name')) && !Ember.isEmpty(this.get('model.pilotClassId'));
             }
         }
     ),
@@ -34,14 +35,23 @@ export default Ember.Controller.extend({
             return false;
         },
 
+        createManeuver: function() {
+            debugger;
+            var newManeuver = this.store.createRecord('maneuver', {
+                name: this.get('model.name'),
+                pilotClassId: this.get('model.pilotClassId')
+            });
+            newManeuver.save();
+        },
+
         saveManeuver() {
-            //if (this.get('isValid')) {
-//debugger;
+            if (this.get('isValid')) {
                 this.get('model').save().then(
                     function(maneuver) {
                         console.log('save succeeded');
-                        //debugger;
-                        this.transitionToRoute('admin.maneuvers.index', maneuver);
+                        debugger;
+                        this.transitionToRoute('admin.maneuvers.index');
+                        //this.transitionToRoute('admin.maneuvers.index', maneuver);
                     },
                     function() {
                         console.log('save failed');
@@ -49,14 +59,15 @@ export default Ember.Controller.extend({
                         // fail
                     }
                 );
-            //} else {
-            //    this.set('errorMessage', 'You have to fill all the fields');
-            //}
+            } else {
+                this.set('errorMessage', 'You have to fill all the fields');
+            }
 
             return false;
         },
         cancelManeuver() {
-            return true;  //  bubble up
+            this.transitionToRoute('admin.maneuvers.index');
+            return false;
         }
     }
 

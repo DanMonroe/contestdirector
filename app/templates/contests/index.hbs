@@ -9,14 +9,12 @@
         <tr>
             <th>Contest</th>
             <th></th>
-            <th></th>
         </tr>
         </thead>
         <tbody>
         {{#each model as |contest|}}
             <tr>
                 <td>{{link-to contest.name "contests.show" contest}}</td>
-                <td>{{contest.aircraftType.name}}</td>
                 <td class="iconBar">
                     {{#paper-button icon-button=true action="editContest" param=contest}}{{paper-icon icon="edit"}}{{/paper-button}}
                     {{#paper-button icon-button=true action="deleteContest" param=contest}}{{paper-icon icon="delete"}}{{/paper-button}}

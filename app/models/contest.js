@@ -3,7 +3,7 @@ import DS from 'ember-data';
 
 export default DS.Model.extend({
   name: DS.attr('string'),
-  aircraftTypeId: DS.attr('number'),
+  //aircraftTypeId: DS.attr('number'),
   pilotClasses: DS.hasMany('pilotclass',{async: true}),
   //urlpath: DS.attr('string'),
 
