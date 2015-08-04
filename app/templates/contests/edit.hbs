@@ -1,10 +1,20 @@
-{{#paper-content classNames="md-whiteframe-z1"}}
+{{#paper-content}}
         <h2>Editing {{model.name}}</h2>
     {{paper-divider}}
     <form>
         <h4>{{errorMessage}}</h4>
         <p>
             {{paper-input label="Name" value=model.name required=true required-errortext="Contest name is required."}}
+        </p>
+        <p>
+            {{select-2
+            content=model.pilotClasses
+            value=pilotClasses
+            placeholder="Select pilot classes"
+            multiple=true
+            optionValuePath="id"
+            optionLabelPath="name"
+            }}
         </p>
         <p>
             {{#paper-button raised=true action="saveContest"}}Save{{/paper-button}}

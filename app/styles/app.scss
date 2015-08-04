@@ -2,6 +2,12 @@ $primary: 'blue';
 
 @import 'ember-paper';
 
+/* DEMO PAGE STYLES */
+.doc-content {
+  max-width: 864px;
+  //margin: auto;
+}
+
  table {
    margin-bottom: 8px;
    max-width: 100%;

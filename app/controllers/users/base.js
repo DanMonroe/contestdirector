@@ -3,8 +3,7 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
     isValid: Ember.computed('model.email', 'model.firstName', 'model.lastName', {
             get() {
-                return !Ember.isEmpty(this.get('model.email')) &&
-                    !Ember.isEmpty(this.get('model.firstName')) &&
+                return !Ember.isEmpty(this.get('model.firstName')) &&
                     !Ember.isEmpty(this.get('model.lastName'));
             }
         }

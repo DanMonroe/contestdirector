@@ -14,7 +14,7 @@
     <tbody>
     {{#each model as |user|}}
         <tr>
-            <td>{{link-to user.firstName "users.show" user}}</td>
+            <td>{{link-to user.fullName "users.show" user}}</td>
             <td class="iconBar">
                 {{#paper-button icon-button=true action="editUser" param=user}}{{paper-icon icon="edit"}}{{/paper-button}}
                 {{#paper-button icon-button=true action="deleteUser" param=user}}{{paper-icon icon="delete"}}{{/paper-button}}

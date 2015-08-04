@@ -28,8 +28,16 @@ export default Ember.Controller.extend({
     ],
 
     actions: {
+        createContest() {
+            var newContest = this.store.createRecord('contest', {
+                name: this.get('model.name'),
+                pilotClasses: this.get('model.pilotClasses')
+            });
+            newContest.save();
+        },
         saveContest() {
             if (this.get('isValid')) {
+
 
                 this.get('model').save().then((contest) => {
                     this.transitionToRoute('contests.show', contest);

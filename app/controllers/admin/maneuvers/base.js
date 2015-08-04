@@ -13,7 +13,6 @@ export default Ember.Controller.extend({
 
     isValid: Ember.computed('model.name', {
             get() {
-                debugger;
                 return !Ember.isEmpty(this.get('model.name')) && !Ember.isEmpty(this.get('model.pilotClassId'));
             }
         }
@@ -36,7 +35,6 @@ export default Ember.Controller.extend({
         },
 
         createManeuver: function() {
-            debugger;
             var newManeuver = this.store.createRecord('maneuver', {
                 name: this.get('model.name'),
                 pilotClassId: this.get('model.pilotClassId')
@@ -47,15 +45,13 @@ export default Ember.Controller.extend({
         saveManeuver() {
             if (this.get('isValid')) {
                 this.get('model').save().then(
-                    function(maneuver) {
+                    function() {
                         console.log('save succeeded');
-                        debugger;
                         this.transitionToRoute('admin.maneuvers.index');
                         //this.transitionToRoute('admin.maneuvers.index', maneuver);
                     },
                     function() {
                         console.log('save failed');
-                        //debugger;
                         // fail
                     }
                 );

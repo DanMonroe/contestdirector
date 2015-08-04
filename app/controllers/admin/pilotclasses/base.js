@@ -43,15 +43,13 @@ export default Ember.Controller.extend({
         //
         savePilotclass() {
             if (this.get('isValid')) {
-debugger;
                 this.get('model').save().then(
-                    function(pilotclass) {
+                    function() {
                         this.transitionToRoute('admin.pilotclasses.index');
                         //this.transitionToRoute('admin.pilotclasses.index', pilotclass);
                     },
                     function() {
-                        //console.log('save failed');
-                        //debugger;
+                        console.log('save failed');
                         // fail
                     }
                 );
