@@ -1,12 +1,14 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-    filteredManeuvers: Ember.computed('selectedItem', function() {
+    filteredManeuversets: Ember.computed('selectedItem', function() {
         var selectedClass = this.get('selectedItem');
 
-        return this.get('model.maneuvers').filter(
-            function (maneuver) {
-                return maneuver.get('pilotClassId') === selectedClass;
+        return this.get('model.maneuversets').filter(
+            function (maneuverset) {
+                console.log(maneuverset.get('pilotClassId'));
+                console.log(selectedClass);
+                return maneuverset.get('pilotClassId') === selectedClass;
             }
         );
     }),
@@ -18,37 +20,37 @@ export default Ember.Controller.extend({
         }
     ),
     actions: {
-        deleteManeuver(maneuver) {
-            maneuver.destroyRecord().then(
+        deleteManeuverset(maneuverset) {
+            maneuverset.destroyRecord().then(
                 () => {
                     // success
-                    this.transitionToRoute('admin.maneuvers.index');
+                    this.transitionToRoute('admin.maneuversets.index');
                 },
                 () => {
                     // fail
                 }
             );
         },
-        editManeuver(maneuver) {
-            this.transitionToRoute('admin.maneuvers.edit', maneuver);
+        editManeuverset(maneuverset) {
+            this.transitionToRoute('admin.maneuversets.edit', maneuverset);
             return false;
         },
 
-        createManeuver: function() {
-            var newManeuver = this.store.createRecord('maneuver', {
+        createManeuverset: function() {
+            var newManeuverset = this.store.createRecord('maneuverset', {
                 name: this.get('model.name'),
-                maneuversetId: this.get('model.maneuversetId')
+                pilotClassId: this.get('model.pilotClassId')
             });
-            newManeuver.save();
+            newManeuverset.save();
         },
 
-        saveManeuver() {
+        saveManeuverset() {
             if (this.get('isValid')) {
                 this.get('model').save().then(
                     function() {
                         console.log('save succeeded');
-                        this.transitionToRoute('admin.maneuvers.index');
-                        //this.transitionToRoute('admin.maneuvers.index', maneuver);
+                        this.transitionToRoute('admin.maneuversets.index');
+                        //this.transitionToRoute('admin.maneuversets.index', maneuverset);
                     },
                     function() {
                         console.log('save failed');
@@ -61,8 +63,8 @@ export default Ember.Controller.extend({
 
             return false;
         },
-        cancelManeuver() {
-            this.transitionToRoute('admin.maneuvers.index');
+        cancelManeuverset() {
+            this.transitionToRoute('admin.maneuversets.index');
             return false;
         }
     }

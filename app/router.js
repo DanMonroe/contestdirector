@@ -18,6 +18,11 @@ Router.map(function() {
       this.route('edit', { path: ':maneuver_id/edit' });
       this.route('new');
     });
+    this.route('maneuversets', function() {
+      this.route('show', { path: ':manueverset_id' });
+      this.route('edit', { path: ':manueverset_id/edit' });
+      this.route('new');
+    });
   });
 
   this.route('contests', function() {
