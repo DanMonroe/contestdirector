@@ -7,7 +7,10 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('admin', function() {
-    this.route('aircrafttypes');
+    this.route('aircrafttypes', function() {
+      this.route('pilotclasses');
+      this.route('new');
+    });
     this.route('pilotclasses', function() {
         this.route('show', { path: ':pilotclass_id' });
         this.route('edit', { path: ':pilotclass_id/edit' });
