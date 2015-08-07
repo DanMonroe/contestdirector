@@ -1,6 +1,6 @@
 import { moduleFor, test } from 'ember-qunit';
 
-moduleFor('route:admin/aircrafttypes/index', 'Unit | Route | admin/aircrafttypes/index', {
+moduleFor('route:admin/aircrafttypes/pilotclasses/new', 'Unit | Route | admin/aircrafttypes/pilotclasses/new', {
   // Specify the other units that are required for this test.
   // needs: ['controller:foo']
 });

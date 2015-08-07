@@ -8,14 +8,16 @@ var Router = Ember.Router.extend({
 Router.map(function() {
   this.route('admin', function() {
     this.route('aircrafttypes', function() {
-      this.route('pilotclasses');
       this.route('new');
-    });
-    this.route('pilotclasses', function() {
-        this.route('show', { path: ':pilotclass_id' });
-        this.route('edit', { path: ':pilotclass_id/edit' });
+      this.route('pilotclasses', { path: ':aircrafttype_id/pilotclasses' }, function() {
         this.route('new');
+      });
     });
+    //this.route('pilotclasses', function() {
+    //    this.route('show', { path: ':pilotclass_id' });
+    //    this.route('edit', { path: ':pilotclass_id/edit' });
+    //    this.route('new');
+    //});
     this.route('maneuvers', function() {
       this.route('show', { path: ':maneuver_id' });
       this.route('edit', { path: ':maneuver_id/edit' });
