@@ -1,10 +1,10 @@
-<h3>Pilot Classes</h3>
-{{#paper-button icon-button=true action="transitionTo" param="admin.aircrafttypes.pilotclasses.new"}}Add{{/paper-button}}
 
 {{#paper-content classNames="md-whiteframe-z1"}}
+    <h3>{{model.name}} Pilot Classes</h3>
+    {{#link-to "admin.aircrafttypes.pilotclasses.new" model}}Add{{/link-to}}
+
     {{#paper-list}}
-        {{log aircraftTypes}}
-        {{#each model as |pilotclass|}}
+        {{#each model.pilotclasses as |pilotclass|}}
             {{#paper-item class="md-3-line"}}
                 <div class="md-list-item-text">
                     <h3>{{pilotclass.name}}</h3>

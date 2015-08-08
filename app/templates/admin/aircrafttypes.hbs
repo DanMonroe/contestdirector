@@ -1,7 +1,7 @@
-<h3>Aircraft Types</h3>
-{{#paper-button icon-button=true action="transitionTo" param="admin.aircrafttypes.new"}}Add{{/paper-button}}
 
 {{#paper-content classNames="md-whiteframe-z1"}}
+    <h3>Aircraft Types</h3>
+    {{#paper-button icon-button=true action="transitionTo" param="admin.aircrafttypes.new"}}Add{{/paper-button}}
     {{#paper-list}}
         {{log aircraftTypes}}
         {{#each model as |aircrafttype|}}
